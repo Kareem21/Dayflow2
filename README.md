@@ -62,6 +62,7 @@ Dayflow is now available on **Windows, macOS, and Linux**! The new Electron impl
 | **Tech Stack** | SwiftUI + AVFoundation | Electron + FFmpeg |
 | **Development** | Xcode required | Node.js only |
 | **Performance** | Native, most efficient | Good, slight overhead |
+| **Design** | Original Dayflow design | Matches macOS version |
 
 ---
 
@@ -343,6 +344,19 @@ The new cross-platform Electron version maintains feature parity with the macOS 
 - **fluent-ffmpeg** - FFmpeg wrapper for video processing
 - **Gemini API / Ollama** - AI analysis providers
 - **electron-builder** - Build and distribution
+
+### Design System
+
+The Electron version authentically recreates the original macOS app's warm, elegant design language:
+
+- **Typography**: Instrument Serif (headings) + Nunito (body)
+- **Colors**: Warm orange/beige palette (#FF7506, #F7F2EC)
+- **Shadows**: 5-layer DayflowShadow system
+- **Timeline Cards**: 2px radius, 6px colored accent bars, gradient category pills
+- **Buttons**: Orange primary with glass secondary, spring animations
+- **Effects**: Backdrop blur, glass morphism, smooth spring physics
+
+See [electron-app/README.md#design-system](electron-app/README.md#design-system) for complete design documentation.
 
 ### Platform-Specific APIs
 
