@@ -358,6 +358,15 @@ The Electron version authentically recreates the original macOS app's warm, eleg
 
 See [electron-app/README.md#design-system](electron-app/README.md#design-system) for complete design documentation.
 
+**Recent Styling Update:** The Electron UI has been completely restyled to authentically match the original macOS app's design. Key improvements include:
+- Replaced generic styling with Dayflow's warm orange/beige color palette
+- Implemented signature multi-layer shadow system (DayflowShadow)
+- Added Instrument Serif and Nunito fonts matching the original
+- Timeline cards now feature 6px colored accent bars and minimal 2px radius
+- Buttons use glass morphism and spring physics animations
+- Full backdrop blur effects on modals and glass surfaces
+- Category pills with gradient backgrounds and proper color coding
+
 ### Platform-Specific APIs
 
 | macOS (Swift) | Electron Equivalent |
