@@ -14,6 +14,59 @@ A complete rewrite of Dayflow in Electron, bringing the privacy-focused screen t
 - **Cross-Platform**: Works on macOS, Windows, and Linux
 - **System Tray**: Runs quietly in the background
 - **Auto-Launch**: Starts automatically on login (optional)
+- **Authentic Design**: Matches the original macOS app's warm, elegant design language
+
+## Design System
+
+The Electron version faithfully recreates the original Dayflow design language from the macOS SwiftUI app.
+
+### Typography
+- **Headings**: Instrument Serif (elegant serif for titles)
+- **Body**: Nunito (clean, modern sans-serif)
+- **Size Scale**: 11px-32px with proper hierarchy
+
+### Color Palette
+- **Brand Orange**: #FF7506 (primary), #FF2B05 (buttons)
+- **Warm Backgrounds**: #F7F2EC (main), #FFFBF8 (cards)
+- **Text**: Black with opacity variations (0.85, 0.7, 0.55, 0.35)
+- **Borders**: Subtle warm tones (#E9E1DE, #E8E8E8)
+
+### Shadows
+- **DayflowShadow**: Signature 5-layer multi-shadow system
+- **Card Shadow**: Soft, subtle depth (0.06-0.08 opacity)
+- **Button Shadow**: Crisp definition (0.15-0.25 opacity)
+
+### Interactions
+- **Hover**: translateY(-1px to -2px) + scale(1.02-1.05)
+- **Press**: scale(0.97-0.985)
+- **Timing**: Spring physics (0.22s-0.35s with damping)
+- **Accessibility**: Full reduce-motion support
+
+### Component Design
+
+**Timeline Cards:**
+- Minimal 2px corner radius
+- 6px colored left accent bar (by category)
+- #FFFBF8 background with 0.25px borders
+- Gradient backgrounds for categories
+- Subtle hover elevation
+
+**Buttons:**
+- Primary: Orange (#FF2B05) with white overlay border
+- Secondary: White glass (0.9 opacity)
+- Icons: Perfect circles with soft shadows
+- Multi-layer shadow on primary buttons
+
+**Modals:**
+- Glass morphism with backdrop blur
+- 18px corner radius
+- Slide-up animation with spring physics
+- 0.8px white borders for depth
+
+### Visual Effects
+- **Backdrop Blur**: 20px blur on glass surfaces
+- **Gradients**: Subtle 135° linear gradients on category pills
+- **Animations**: Breathe (recording), pulse (interactions), fade/slide (modals)
 
 ## Architecture
 

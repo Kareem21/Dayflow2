@@ -207,7 +207,7 @@ function renderTimelineCard(card) {
   const distractionClass = card.is_distraction ? 'distraction' : '';
 
   return `
-    <div class="timeline-card ${distractionClass}" data-card-id="${card.id}">
+    <div class="timeline-card ${categoryClass} ${distractionClass}" data-card-id="${card.id}">
       <div class="card-header">
         <div>
           <div class="card-title">${escapeHtml(card.title)}</div>
