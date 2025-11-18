@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Dayflow - Screen Activity Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Dayflow</h1>
+        <p class="tagline">AI-Powered Activity Timeline</p>
+      </div>
+      <div class="header-right">
+        <button id="recordBtn" class="btn btn-primary">
+          <span class="record-icon">●</span>
+          <span id="recordText">Start Recording</span>
+        </button>
+        <button id="settingsBtn" class="btn btn-secondary">Settings</button>
+      </div>
+    </header>
+
+    <!-- Date Navigation -->
+    <div class="date-nav">
+      <button id="prevDayBtn" class="btn-icon">‹</button>
+      <input type="date" id="datePicker" class="date-picker">
+      <button id="nextDayBtn" class="btn-icon">›</button>
+      <button id="todayBtn" class="btn btn-small">Today</button>
+    </div>
+
+    <!-- Timeline Container -->
+    <main class="timeline-container">
+      <div id="timeline" class="timeline">
+        <div class="empty-state">
+          <div class="empty-icon">📊</div>
+          <h2>No activities yet</h2>
+          <p>Start recording to see your activity timeline</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Settings</h2>
+          <button id="closeSettingsBtn" class="btn-close">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="settings-section">
+            <h3>AI Provider</h3>
+            <div class="form-group">
+              <label>
+                <input type="radio" name="provider" value="gemini" checked>
+                Gemini (Cloud - Fast & Efficient)
+              </label>
+              <label>
+                <input type="radio" name="provider" value="ollama">
+                Ollama (Local - Private)
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-section" id="geminiSettings">
+            <h3>Gemini API Key</h3>
+            <input type="password" id="geminiApiKey" class="input" placeholder="Enter your Gemini API key">
+            <p class="help-text">Get your API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></p>
+          </div>
+
+          <div class="settings-section hidden" id="ollamaSettings">
+            <h3>Ollama Configuration</h3>
+            <div class="form-group">
+              <label>Ollama URL</label>
+              <input type="text" id="ollamaUrl" class="input" value="http://localhost:11434" placeholder="http://localhost:11434">
+            </div>
+            <div class="form-group">
+              <label>Model</label>
+              <input type="text" id="ollamaModel" class="input" value="llava" placeholder="llava">
+            </div>
+            <p class="help-text">Make sure Ollama is running with the llava model installed</p>
+          </div>
+
+          <div class="settings-section">
+            <h3>Data Retention</h3>
+            <p class="help-text">Recordings are automatically deleted after 3 days for privacy</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="saveSettingsBtn" class="btn btn-primary">Save Settings</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal hidden">
+      <div class="modal-content modal-large">
+        <div class="modal-header">
+          <h2 id="videoTitle">Activity Timelapse</h2>
+          <button id="closeVideoBtn" class="btn-close">×</button>
+        </div>
+        <div class="modal-body">
+          <video id="videoPlayer" class="video-player" controls></video>
+          <p id="videoDescription" class="video-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
